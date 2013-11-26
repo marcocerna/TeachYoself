@@ -1,1 +1,8 @@
-<a href="#"><%= @info.title %></a><br>
+<div class='videoDiv'>
+  <a href="https://www.youtube.com/watch?v=<%= @result.id.videoId %>">
+  <img src="<%= @result.snippet.thumbnails.high.url %>"><br>
+  <%= @result.snippet.title %>
+  </a>
+
+</div>
+
