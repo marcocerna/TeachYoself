@@ -6,6 +6,14 @@ gem 'rails', '3.2.14'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'eco'
+gem 'lodash-rails'
+gem 'haml-rails'
+gem 'haml_coffee_assets'
+
+group :test, :development do
+  gem 'konacha'
+end
 
 
 # Gems used only for assets and not required
