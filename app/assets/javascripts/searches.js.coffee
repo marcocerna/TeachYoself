@@ -14,7 +14,7 @@ _.extend App,
     $query = $('#search-bar').val()
 
     # Ajax call
-    $.get("https://www.googleapis.com/youtube/v3/search?key=" + $key + "&q=" + $query + "+tutorial&part=snippet").done App.appendData
+    $.get("https://www.googleapis.com/youtube/v3/search?key=" + $key + "&q=" + $query + "+tutorial&part=snippet&maxResults=25").done App.appendData
 
   appendData: (data) ->
     console.log data
@@ -29,14 +29,14 @@ _.extend App,
       info = result.snippet
 
       # Figure out how to refine these conditions
-      if info.title.search(" 1") != -1
+      if (info.title.search(" 1") != -1) || (info.title.search("Pt ") != -1)
         $multiResults.append(JST["templates/result"](result: result))
       else if (info.title.search("laylist") != -1) || (info.description.search("laylist") != -1)
         $playlistResults.append(JST["templates/result"](result: result))
       else
         $singleResults.append(JST["templates/result"](result: result))
 
-    $('.draggable').draggable()
+    $('.draggable').draggable {revert: true}
 
 $ ->
 
@@ -54,8 +54,6 @@ $ ->
 
 
 
-
-  $('.draggable').draggable { revert: true }
 
 
 
