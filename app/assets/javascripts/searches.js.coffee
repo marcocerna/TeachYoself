@@ -14,7 +14,7 @@ _.extend App,
     $query = $('#search-bar').val()
 
     # Ajax call
-    $.get("https://www.googleapis.com/youtube/v3/search?key=" + $key + "&q=" + $query + "+tutorial&part=snippet&maxResults=25").done App.appendData
+    $.get("https://www.googleapis.com/youtube/v3/search?key=" + $key + "&q=" + $query + "+tutorial&part=snippet&maxResults=15").done App.appendData
 
   appendData: (data) ->
     console.log data
@@ -31,10 +31,19 @@ _.extend App,
       # Figure out how to refine these conditions
       if (info.title.search(" 1") != -1) || (info.title.search("Pt ") != -1)
         $multiResults.append(JST["templates/result"](result: result))
+        $thisDiv = $multiResults
       else if (info.title.search("laylist") != -1) || (info.description.search("laylist") != -1)
         $playlistResults.append(JST["templates/result"](result: result))
+        $thisDiv = $playlistResults
       else
         $singleResults.append(JST["templates/result"](result: result))
+        $thisDiv = $singleResults
+
+      # if $thisDiv.children().length is 4
+        # $thisDiv.append("<ul class='container Aligner'>")
+
+    $('.videoDiv').slideDown 'slow'
+
 
     $('.draggable').draggable {revert: true}
 
@@ -51,8 +60,6 @@ $ ->
     $('#search-bar').stop(true, false).animate width: "500px"
   ), ->
     $('#search-bar').stop(true, false).animate width: "500px"
-
-
 
 
 

@@ -1,4 +1,4 @@
-%li.videoDiv.Aligner-item.draggable{'rel': 'popover', 'data-content': "Here is content!", 'data-original-title': "Title!"}
+.videoDiv.Aligner-item.draggable{'rel': 'popover', 'data-content': "Here is content!", 'data-original-title': "Title!", style: 'display: none;'}
 
 
   %a{href: "https://www.youtube.com/watch?v=#{@result.id.videoId}"}

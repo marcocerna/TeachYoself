@@ -7,6 +7,13 @@
     %input#search-button.navbar-right{type: 'submit', value: "Learn something!"}
     %input#search-bar.navbar-right{type: 'text', placeholder: "I want to learn about..."}
 
+
+%nav.navbar.navbar-default.navbar-fixed-top{role: "navigation", style: "height: 96px; display: none; background-color: #1abc9c; color: white"}
+
+  %h1 Drag video here to save!
+
+
+
 #videos-solo
   %h2 Single Videos
   %ul.container.Aligner
@@ -15,13 +22,13 @@
 
 #videos-multi
   %h2 Multi-Part Videos
-  %ul.container
+  %ul.container.Aligner
 
 %br
 
 #videos-playlist
   %h2 Playlists
-  %ul.container
+  %ul.container.Aligner
 
 
 .modal.fade#mediaModal{tabindex: "-1", role: "dialog", 'aria-hidden' => "true"}
