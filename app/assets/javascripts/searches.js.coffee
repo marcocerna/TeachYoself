@@ -53,7 +53,9 @@ $ ->
   $(".navbar-fixed-top").hover (->
     $('#search-bar').stop(true, false).animate width: "500px"
   ), ->
-    $('#search-bar').stop(true, false).animate width: "280px"
+    $('#search-bar').stop(true, false).animate width: "500px"
+
+  $('.draggable').draggable()
 
 #######################################
 

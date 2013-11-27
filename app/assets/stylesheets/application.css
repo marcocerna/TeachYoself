@@ -53,7 +53,7 @@ h1 {
 }
 
 #search-button:hover {
-  background-color: #3498db;
+  background-color: #16a085;
 }
 
 .videoLink {
@@ -77,7 +77,7 @@ h1 {
 }
 
 .videoDiv:hover {
-  background-color: red;
+  background-color: #2980b9;
   color: white;
 }
 
