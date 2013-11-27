@@ -84,8 +84,8 @@ $ ->
       e.preventDefault()
 
       # Variables for iFrame code. Width and height from data attributes, else use default.
-      vidWidth = 800 # default
-      vidHeight = 520 # default
+      vidWidth = 1200 # default
+      vidHeight = 780 # default
       vidWidth = parseInt($(this).attr("data-width"))  if $(this).attr("data-width")
       vidHeight = parseInt($(this).attr("data-height"))  if $(this).attr("data-height")
       iFrameCode = "<iframe width=\"" + vidWidth + "\" height=\"" + vidHeight + "\" scrolling=\"no\" allowtransparency=\"true\" allowfullscreen=\"true\" src=\"http://www.youtube.com/embed/" + queryVars["v"] + "?rel=0&wmode=transparent&showinfo=0\" frameborder=\"0\"></iframe>"
