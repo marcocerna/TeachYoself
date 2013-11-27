@@ -36,6 +36,7 @@ _.extend App,
       else
         $singleResults.append(JST["templates/result"](result: result))
 
+    $('.draggable').draggable()
 
 $ ->
 
@@ -45,17 +46,52 @@ $ ->
 
   $('#search-button').on 'click', App.youtubeSearch
 
-  # $('body').on 'hover', '', ->
-  #   $('#search-bar').animate
-  #     width: "200px"
-  #   , 'slow'
 
   $(".navbar-fixed-top").hover (->
     $('#search-bar').stop(true, false).animate width: "500px"
   ), ->
     $('#search-bar').stop(true, false).animate width: "500px"
 
-  $('.draggable').draggable()
+
+
+
+  $('.draggable').draggable { revert: true }
+
+
+
+#######################################
+
+
+## Popover Attempt #1 ##
+## Delete this if it doesn't work ##
+## Also delete class on divs ##
+
+
+  # $('.overlay-with-popover').popover(
+  #   placement: 'auto right'
+  #   trigger: 'manual'
+  #   html: true
+  #   container: 'body'
+  #   content: ->
+  #     return $(this).children('.popover-content').html()
+  #   title: ->
+  #     return $(this).children('.popover-title').html()
+  #   ).on('mouseenter', ->
+  #   $(".popover").hide()
+  #   $(this).popover "show"
+  #   )
+
+
+
+
+
+## Popover Attempt #2 ##
+
+  $('.videoDiv').popover()
+
+
+
+
 
 #######################################
 

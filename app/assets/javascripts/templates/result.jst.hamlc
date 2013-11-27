@@ -1,6 +1,35 @@
-.videoDiv.draggable
+.videoDiv.draggable{'rel': 'popover', 'data-content': "Here is content!", 'data-original-title': "Title!"}
+
+
+  / .overlay-with-popover
+  /   .popover-title{'data-style': 'primary', style: 'display: none'}
+  /     %h4 Hello!
+  /   .popover-content{'data-style': 'display', style: 'display: none'}
+  /     %p Text goes here
+
+
+
   %a{href: "https://www.youtube.com/watch?v=#{@result.id.videoId}"}
     %img{src: "#{@result.snippet.thumbnails.high.url}"}
   %br
   %p
     = @result.snippet.title
+
+
+/ HTML shamelessly stolen from Booklust.
+/ Ask their group about how to customize this later.
+
+  / <div class="overlay-with-popover">
+  /   <div class="popover-title" data-style="primary" style="display: none"><h4><%= book.title.downcase.split(" ").map(&:capitalize).join(" ") %></h4></div>
+  /   <div class="popover-content" data-style="primary" style="display: none">
+  /   <p><strong>Author:</strong> <%= book.author %></p>
+
+  /     <p><%= book.description %></p>
+
+  /     <p><a href=<%= book.amazon_ref %>><button id="buy-<%=book.id%>" type="button" style="float: left" class="btn btn-danger btn-sm buy" data-html="true">Buy</button></a>
+
+  /     <button id="add-<%=book.id%>" type="button" class="btn btn-danger btn-sm remove" data-id="<%= book.id %>" data-html="true">Remove From List</button></p>
+
+  /   </div>
+
+  / </div>
