@@ -1,27 +1,27 @@
-.search
+%nav.navbar.navbar-default.navbar-fixed-top{role: "navigation"}
 
-  %h1 Teach Yo Self
+  .search
 
-  %input#search-bar{type: 'text', placeholder: "Learn something!"}
-  %input#search-button{type: 'submit'}
+    %h1#title Teach Yo Self
+
+    %input#search-button.navbar-right{type: 'submit', value: "Learn something!"}
+    %input#search-bar.navbar-right{type: 'text', placeholder: "I want to learn about..."}
 
 #videos-solo
   %h2 Single Videos
-  %ul
+  %ul.container
 
-%br
 %br
 
 #videos-multi
   %h2 Multi-Part Videos
-  %ul
+  %ul.container
 
-%br
 %br
 
 #videos-playlist
   %h2 Playlists
-  %ul
+  %ul.container
 
 
 .modal.fade#mediaModal{tabindex: "-1", role: "dialog", 'aria-hidden' => "true"}

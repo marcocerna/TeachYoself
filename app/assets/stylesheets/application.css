@@ -12,30 +12,48 @@
  *= require_tree .
  */
 
+@import url(http://fonts.googleapis.com/css?family=Lato);
+
+body {
+  font-family: 'Lato';
+  background-color: rgba(147,128,108,.1);
+  padding-top: 100px;
+  padding-left: 30px;
+}
+
+.navbar-fixed-top {
+  padding: 28px;
+  clear: both;
+}
+
 .search {
-  text-align: center;
+  /*text-align: center;*/
 }
 
 h1 {
   font-size: 48px;
+  display: inline;
 }
 
 #search-bar {
   font-size: 24px;
-  width: 500px;
+  width: 280px;
+  margin-right: 20px;
+  padding-left: 10px;
 }
 
 #search-button {
-  font-size: 24px;
+  font-size: 18px;
+  padding: 6px 12px 6px 12px;
   border: 0px;
-  border-radius: 0px;
+  border-radius: 2px;
   color: white;
-  background-color: blue;
+  background-color: #1abc9c;
   cursor: pointer;
 }
 
 #search-button:hover {
-  background-color: red;
+  background-color: #3498db;
 }
 
 .videoLink {
@@ -44,18 +62,32 @@ h1 {
 }
 
 .videoDiv {
-  border: 1px solid black;
+  border: 0px solid black;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 15px;
   width: 25%;
+  height: 250px;
   text-align: center;
   clear: none;
   display: inline-block;
+  background-color: #3498db;
+  color: white;
+  position: relative;
+}
+
+.videoDiv:hover {
+  background-color: red;
+  color: white;
 }
 
 li {
   display: inline;
+  margin-top: 0px;
 }
 
-/*fix this later*/
+
 img {
   max-width: 250px;
+  margin-bottom: 5px;
 }

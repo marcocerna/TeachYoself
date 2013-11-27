@@ -38,25 +38,39 @@ _.extend App,
 
 
 $ ->
+
+  $(document).keypress (e) ->
+    $('#search-button').click()  if e.which is 13
+
+
   $('#search-button').on 'click', App.youtubeSearch
 
+  # $('body').on 'hover', '', ->
+  #   $('#search-bar').animate
+  #     width: "200px"
+  #   , 'slow'
+
+  $(".navbar-fixed-top").hover (->
+    $('#search-bar').stop(true, false).animate width: "500px"
+  ), ->
+    $('#search-bar').stop(true, false).animate width: "280px"
 
 #######################################
+
+
+  # $('#videos-solo').isotope
+  #   # options
+  #   itemSelector : '.videoDiv'
+  #   layoutMode : 'fitRows'
+
+
+
 #######################################
 
 
-# REQUIRED: Include "jQuery Query Parser" plugin here or before this point:
-#          https://github.com/mattsnider/jquery-plugin-query-parser
-# $(document).ready ->
-
-  # BOOTSTRAP 3.0 - Open YouTube Video Dynamicaly in Modal Window
-  # Modal Window for dynamically opening videos
-  # $("a[href^=\"https://www.youtube.com\"]").on "click", (e) ->
   $('body').on 'click', "a[href^=\"https://www.youtube.com\"]", (e) ->
 
-
     e.preventDefault()
-    alert "yay!"
 
     # Store the query string variables and values
     # Uses "jQuery Query Parser" plugin, to allow for various URL formats (could have extra parameters)
@@ -71,7 +85,7 @@ $ ->
 
       # Variables for iFrame code. Width and height from data attributes, else use default.
       vidWidth = 800 # default
-      vidHeight = 500 # default
+      vidHeight = 520 # default
       vidWidth = parseInt($(this).attr("data-width"))  if $(this).attr("data-width")
       vidHeight = parseInt($(this).attr("data-height"))  if $(this).attr("data-height")
       iFrameCode = "<iframe width=\"" + vidWidth + "\" height=\"" + vidHeight + "\" scrolling=\"no\" allowtransparency=\"true\" allowfullscreen=\"true\" src=\"http://www.youtube.com/embed/" + queryVars["v"] + "?rel=0&wmode=transparent&showinfo=0\" frameborder=\"0\"></iframe>"

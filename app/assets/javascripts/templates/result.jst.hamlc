@@ -1,0 +1,6 @@
+.videoDiv
+  %a{href: "https://www.youtube.com/watch?v=#{@result.id.videoId}"}
+    %img{src: "#{@result.snippet.thumbnails.high.url}"}
+  %br
+  %p
+    = @result.snippet.title
